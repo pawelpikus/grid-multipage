@@ -10,6 +10,10 @@ body{
     font-family: 'Montserrat', sans-serif;;
 }
 
+img{
+  max-width: 100%;
+}
+
 /* ==================
     Typography
 ===================== */
@@ -21,9 +25,19 @@ h1, h2, strong{
     color: #FFE600;
 }
 
-.hero-title{
+.hero-title {
     font-size: 1.5rem;
     line-height: 1.4;
+}
+
+.page-title{
+    font-size: 3rem;
+    color: #000;
+}
+
+.subtitle{
+    font-size: 1.125rem;
+    color: #000;
 }
 
 .section-title{
@@ -63,6 +77,7 @@ h1, h2, strong{
 /* nav */
 .header{
     background: #000;
+    width: 100%;
 }
 
 .header-content{
@@ -285,5 +300,71 @@ h1, h2, strong{
 
     .col:first-child{
         grid-column: 2 / span 1; 
+    }
+}
+
+/* ==================
+    template page 
+===================== */
+
+.main-template{
+    padding: 4em 0;
+}
+
+
+.main-template > *{
+    grid-column: 2 / -2;
+}
+
+.page-title{
+    font-size: 2.5em;
+    margin: 3em 0 0;
+    text-align: center;
+}
+
+.subtitle{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3em;
+}
+
+.subtitle:first-child{
+    margin-top: 0;
+}
+
+.main-image{
+    margin-bottom: 1.125em;
+}
+
+.main-image{
+    margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    .page-title,
+    .subtitle{
+        grid-column: 2 / -2;
+        
+    }
+
+    .main-image{
+        grid-column: 2;
+    }
+
+    .page-title{
+        margin: 2em 0 0;
+    }
+
+    .subtitle{
+        margin: 2em 0 5em;
+        
+    }
+
+    .main-text{
+        grid-column: 3 / span 2;
+    }
+
+    .section-title{
+        margin-top: 0;
     }
 }
