@@ -13,7 +13,7 @@
         <script src="https://kit.fontawesome.com/3c9d0da18a.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header class="header header-home main-grid">
+        <header class="header main-grid">
             <div class="header-content ">
                 <a href="index.html" aria-label="logo" class="header-link">
                     <img src="./img/logo.png" alt="logo" class="header-logo">
@@ -22,34 +22,42 @@
                 <nav class="nav">
                     <button class="close-nav" aria-label="close navigation">&times;</button>
                     <ul class="nav-list">
-                        <li class="list-item"><a href="index.html" class="nav-link current">home</a></li>
+                        <li class="list-item"><a href="index.html" class="nav-link">home</a></li>
                         <li class="list-item"><a href="about.html" class="nav-link">about us</a></li>
-                        <li class="list-item"><a href="contact.html" class="nav-link">contact</a></li>
+                        <li class="list-item"><a href="contact.html" class="nav-link current">contact</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         
-        <main>
-            <section class="hero main-grid">
-                <h1 class="hero-title">The only marketing agency on <span class="accent-color">a mission from God</span>, fully dedicated to increase your web traffic.</h1>
-                <p class="subtitle">We’re two brothers from Chicago that are trying to pay back our debt. We can help you with <strong>SEO, SEM, content marketing</strong> and whatever else.</p>
-                <a href="#" class="btn btn-primary">Contact</a>
-            </section>
-            <section class="info main-grid">
-                <div class="col">
-                    <h2 class="section-title section-title-center">About Us</h2>
-                    <p>We grew up in downtown Chicago, and we used to play in a band. <strong>Jake loves fried chicken</strong>, and <strong> Elwood loves dry white toast.</strong> </p>
-                </div>
-                <div class="col">
-                    <h2 class="section-title section-title-center">Our skills</h2>
-                    <p>Elwood is an expert in <strong> SEO, SEM, and driving from the police.  </strong>Jake is our <strong>social media specialist</strong>, and he has an amazing voice.</p>
-                </div>
-                <div class="col">
-                    <h2 class="section-title section-title-center">Get in touch</h2>
-                    <p>Send us an email with some info about what help you need and <strong>l drive over to your place </strong>in our Bluesmobile the following day to discuss the deal.</p>
-                </div>
-            </section>
+        <main class="main-template main-grid">
+            
+            <h1 class="page-title">Contact.</h1>
+            <p class="subtitle subtitle-template">Let us know how we can help you need and we’ll drive over to your place in our Bluesmobile the following day to discuss the deal.</p>
+            
+            <img class="main-image" src="img/contact.jpg" alt="a bunch of mailboxes">
+
+            <div class="secondary-text">
+                <h2 class="section-title">Getting in touch with us</h2>
+                <p>You can either use the form or <a href="mailto:#"> send us an email</a>. I'll get back in touch with you as soon as possible!</p>
+            </div>
+            
+            <div class="main-text">
+                <form class="contact-form" action="#" method="POST">
+                    
+                    <label class="fname-label" for="fname">First Name</label>
+                    <input class="fname-input" id="fname" type="text">
+                    
+                    <label class="lname-label" for="lname">Last Name</label>
+                    <input class="lname-input" id="lname" type="text">
+                    
+                    <label class="message-label" for="message">Message</label>
+                    <textarea class="message-textarea" id="message"></textarea>
+                    
+                    <button class="btn btn-primary btn-form">send</button>
+                </form>
+            </div>
+        
         </main>
         
         <footer class="footer main-grid">

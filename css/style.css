@@ -29,21 +29,54 @@ h1, h2, strong{
     font-size: 1.5rem;
     line-height: 1.4;
 }
+.page-title,
+.subtitle-template{
+    grid-column: 2 / -2;
+}
 
 .page-title{
     font-size: 3rem;
     color: #000;
+    justify-self: center;
+}
+
+.page-title::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 35px;
+    background:#FFE600 ;
+    margin-top: -40px;
+    margin-left: 15px;
+
 }
 
 .subtitle{
     font-size: 1.125rem;
-    color: #000;
+    color: #fff;
 }
 
 .section-title{
     font-size: 1.125rem;
     color: #000;
-    margin-top: 1.25em;
+    margin-top: 2em;
+}
+
+.section-title::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 10px 0 0 ;
+    background: #FFE600;
+}
+
+.section-title-center::after{
+    margin: 10px auto;
+}
+
+a{
+    color: black;
 }
 
 /* buttons */
@@ -59,6 +92,16 @@ h1, h2, strong{
     justify-self: start;
 }
 
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #ffc400;
+}
+
+.btn-form{
+    justify-self: right;
+    border: none;
+}
+
 /* ==================
     general layout
 ===================== */
@@ -68,9 +111,10 @@ h1, h2, strong{
     grid-column-gap: 2em;
 }  
 
-@media (min-width: 600px) {
+@media (min-width: 740px) {
     .main-grid{
         grid-template-columns: minmax(1em, 1fr) repeat(3,minmax(150px, 320px)) minmax(1em, 1fr);
+        grid-column-gap: 4em;
     }
 }
 
@@ -78,6 +122,7 @@ h1, h2, strong{
 .header{
     background: #000;
     width: 100%;
+
 }
 
 .header-content{
@@ -153,7 +198,11 @@ h1, h2, strong{
     
 }
 
-@media (min-width: 600px) {
+.current{
+    border-bottom: 2px solid #FFE600;
+}
+
+@media (min-width: 740px) {
     .open-nav,
     .close-nav{
         display: none;
@@ -232,7 +281,7 @@ h1, h2, strong{
     margin-top: 4em;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 740px) {
     .footer {
         grid-template-areas: 
             ". main main social .";
@@ -270,7 +319,7 @@ h1, h2, strong{
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 740px) {
 
     .hero{
         padding: 10em 0 6em;
@@ -293,7 +342,7 @@ h1, h2, strong{
     text-align: center;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 740px) {
     .col{
         grid-column: span 1;
     }
@@ -317,54 +366,96 @@ h1, h2, strong{
 }
 
 .page-title{
-    font-size: 2.5em;
-    margin: 3em 0 0;
+    font-size: 3em;
+    margin: 0;
     text-align: center;
 }
 
-.subtitle{
+.subtitle-template{
     text-align: center;
-    font-weight: 700;
-    margin-bottom: 3em;
+    margin: 2em auto 5em;
+    color: #000;
 }
 
-.subtitle:first-child{
+.section-title:first-child{
     margin-top: 0;
 }
 
 .main-image{
-    margin-bottom: 1.125em;
+    margin: 0 auto 2em;
+    box-shadow: .5em .5em 0 black, 1em 1em 0 #FFE600;
 }
 
-.main-image{
-    margin: 0 auto;
-}
-
-@media (min-width: 600px) {
-    .page-title,
-    .subtitle{
-        grid-column: 2 / -2;
-        
-    }
-
-    .main-image{
+@media (min-width: 740px) {
+    .main-image,
+    .secondary-text{
         grid-column: 2;
     }
 
-    .page-title{
-        margin: 2em 0 0;
-    }
-
-    .subtitle{
-        margin: 2em 0 5em;
-        
+    .subtitle-template{
+        width: 70%;
+        justify-self: center;
     }
 
     .main-text{
         grid-column: 3 / span 2;
+        grid-row: span 2;
+    }
+    .secondary-text{
+        order: 2;
     }
 
-    .section-title{
-        margin-top: 0;
+          
+}
+
+/* ==================
+    form 
+===================== */
+.contact-form{
+    display: grid;
+}
+
+label{
+    font-weight: 700;
+}
+
+input,
+textarea {
+    margin-bottom: .75em;
+    padding: .4em;
+    font-family: inherit;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+}
+
+@media (min-width: 740px){
+    .contact-form{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+        grid-auto-flow: dense;
+        
     }
+
+    .fname-label,
+    .fname-input{
+        grid-column: 1;
+    }
+
+    .lname-label,
+    .lname-input{
+        grid-column: 2;
+    }
+
+    .message-label,
+    .message-textarea{
+        grid-column: span 2;
+    }
+
+    .btn-form{
+        grid-column: 2;
+    }
+
 }
